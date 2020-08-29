@@ -1,0 +1,19 @@
+#complete-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: mediumspringgreen;   
+}
+
+.task-list{
+    width: 310px;
+    max-height: 300px;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+img {
+    position: absolute;
+    width: 60px;
+    top: -25px;
+}
