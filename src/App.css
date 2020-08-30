@@ -4,10 +4,21 @@
 
 .App {
   text-align: center;
-  height: 100vh;
-  background-color: silver;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: silver;
+}
+
+@media screen and (max-width: 1000px) {
+  .App {
+    padding-top: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .App {
+    min-width: 400px;
+  }
 }

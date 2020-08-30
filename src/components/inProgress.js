@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import './style/inprogress.css'
+import './style/task-box.css'
 
 function InProgress(props) {
   const {list, addNextStage, remove} = props;
@@ -17,19 +17,21 @@ function InProgress(props) {
   return (
     <div id="progress-box">
       <img alt="task" src={require('../img/doing.png')} />
-      <div>
-        <h1>IN PROGRESS</h1>
-        <div className="task-list">
-          {
+      <h1>IN PROGRESS</h1>
+      <div className="task-list">
+        {
           list.map(item => 
-            <div>
-              <div>{item.id} {item.content}</div>
-              <button onClick={() => addToNextStage(item, "progress", "todo")}>TO-DO</button>
-              <button onClick={() => addToNextStage(item, "progress", "complete")}>COMPLETE</button>
-              <button onClick={() => removeFromProgress(item)}>DELETE</button>
+            <div className="task">
+              <div className="task-content">
+                <div>{item.content}</div>
+              </div>
+              <div className="task-button">
+                <button className="todo" onClick={() => addToNextStage(item, "progress", "todo")}>PLAN</button>
+                <button className="complete" onClick={() => addToNextStage(item, "progress", "complete")}>COMPLETE</button>
+                <button onClick={() => removeFromProgress(item)}>DELETE</button>
+              </div> 
             </div>
-          )}
-        </div>
+        )}
       </div>
     </div>
   );

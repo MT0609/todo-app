@@ -55,7 +55,7 @@ function MainPage() {
   }
   
   return (
-    <div>
+    <div id="main">
       <div>
         <AddToDo add={addToDo} />
       </div>

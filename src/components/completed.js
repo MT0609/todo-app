@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import './style/complete.css'
+import './style/task-box.css'
 
 function CompletedTasks(props) {
   const {list, remove, backStage} = props;
@@ -17,17 +17,20 @@ function CompletedTasks(props) {
   return (
     <div id="complete-box">
       <img alt="task" src={require('../img/complete.png')} />
-      <div>
-        <h1>COMPLETED</h1>
-        <div className="task-list">
-          {list.map(item => 
-            <div>
-              <div>{item.id} {item.content}</div>
-              <button onClick={() => addToStage(item, "complete", "todo")}>TO-DO</button>
-              <button onClick={() => addToStage(item, "complete", "progress")}>PROGRESS</button>
+      <h1>COMPLETED</h1>
+      <div className="task-list">
+        {list.map(item => 
+          <div className="task">
+            <div className="task-content">
+              <div>{item.content}</div>
+            </div>
+            <div className="task-button">
+              <button className="todo" onClick={() => addToStage(item, "complete", "todo")}>PLAN</button>
+              <button className="progress" onClick={() => addToStage(item, "complete", "progress")}>PROGRESS</button>
               <button onClick={() => removeFromComplete(item)}>DELETE</button>
-            </div>)} 
-        </div>
+            </div>
+          </div>
+        )} 
       </div>
     </div>
   );
