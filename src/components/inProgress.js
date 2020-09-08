@@ -15,7 +15,7 @@ function InProgress(props) {
   }
 
   return (
-    <div id="progress-box">
+    <div id="progress-box" className="task-box">
       <img alt="task" src={require('../img/doing.png')} />
       <h1>IN PROGRESS</h1>
       <div className="task-list">

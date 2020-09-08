@@ -15,7 +15,7 @@ function ToDo(props) {
   }
 
   return (
-    <div id="todo-box">
+    <div id="todo-box" className="task-box">
       <img alt="task" src={require('../img/task.png')} />
       <h1>PLAN TASKS</h1>
       <div className="task-list">

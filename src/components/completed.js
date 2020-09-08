@@ -15,7 +15,7 @@ function CompletedTasks(props) {
   }
 
   return (
-    <div id="complete-box">
+    <div id="complete-box" className="task-box">
       <img alt="task" src={require('../img/complete.png')} />
       <h1>COMPLETED</h1>
       <div className="task-list">

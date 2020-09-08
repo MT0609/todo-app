@@ -19,7 +19,7 @@ function AddToDo(props) {
     <div id="form">
         <form onSubmit={handleSubmit}>
             <input type="text" placeholder="add to-do item..." value={input} onChange={handleInputChange} autoFocus="true" />
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Add Task" />
         </form>
     </div>
   );

@@ -1,5 +1,11 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 .App {
@@ -8,17 +14,22 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   background-color: silver;
 }
 
+@media screen and (max-width: 1024px) {
+  .App {
+    text-align: center;
+    padding: 4rem;
+  }
+}
 @media screen and (max-width: 1000px) {
   .App {
-    padding-top: 20px;
+    padding-top: 2rem;
   }
 }
 @media screen and (max-width: 400px) {
   .App {
-    min-width: 400px;
+    min-width: 40rem;
   }
 }
