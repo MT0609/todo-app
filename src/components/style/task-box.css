@@ -1,130 +1,132 @@
 .task-box {
-    width: calc(33.33% - 13.33px);
-    min-height: 25rem;
+  width: calc(33.33% - 13.33px);
+  min-height: 25rem;
 }
 
 #todo-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: tomato;
-    max-height: 32rem;
-    padding: 10px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: tomato;
+  max-height: 32rem;
+  padding: 10px 0;
 }
 
 #progress-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: palegoldenrod;    
-    max-height: 32rem;
-    padding: 10px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: palegoldenrod;
+  max-height: 32rem;
+  padding: 10px 0;
 }
 
 #complete-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: mediumspringgreen;   
-    max-height: 32rem;
-    padding: 10px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: mediumspringgreen;
+  max-height: 32rem;
+  padding: 10px 0;
 }
 
 .task {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 1rem 1rem 0 2rem;
 }
 
-.task-list{
-    width: 100%;
-    overflow-y: scroll;
+.task-list {
+  width: 100%;
+  overflow-y: scroll;
+}
+/* width */
+.task-list::-webkit-scrollbar {
+  width: 5px;
+}
+/* Handle */
+.task-list::-webkit-scrollbar-thumb {
+  background: rgb(97, 97, 97);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .task-content {
-    width: 30%;
-    margin-left: 1rem;
-    font-size: 2rem;    
-    white-space: nowrap; 
-    text-overflow: ellipsis; 
-    overflow: hidden;
+  width: 90%;
+  font-size: 2rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-button{
-    margin: .5rem;
-    padding: 1rem;
-    border-radius: 2rem;    
-    outline: none;
-    border: none;
-    cursor: pointer;
+.task-content::before {
+  content: "  \00B7  ";
+  font-size: 2rem;
+  font-weight: bold;
 }
-button.todo{
-    background-color: tomato;    
+
+button {
+  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
-button.progress{
-    background-color: palegoldenrod;    
+button.todo {
+  background-color: tomato;
 }
-button.complete{
-    background-color: mediumspringgreen;
+button.progress {
+  background-color: palegoldenrod;
 }
+button.complete {
+  background-color: mediumspringgreen;
+}
+
 h1 {
-    margin-top: 4rem;
-    margin-bottom: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
 }
 img {
-    position: absolute;
-    width: 6rem;
-    top: -2.5rem;
+  position: absolute;
+  width: 6rem;
+  top: -2.5rem;
 }
 
 @media screen and (max-width: 1024px) {
-    .task-box {
-        width: 100%;    
-        min-height: fit-content;
-    }
-    #todo-box {
-        margin-bottom: 3rem;
-    }
-    #progress-box{
-        margin-bottom: 5rem;
-    }
-    .task{
-        display: flex;
-        justify-content: space-between;
-        font-size: 2.5rem;
-        padding: 2rem;
-    }
-    .task-content {
-        width: 50%;
-    }
-    .task-button{
-        display: flex;
-        justify-content: center;
-    }
-    button.todo, button.progress, button.complete {
-        margin-right: 2rem;
-    }
+  .task-box {
+    width: 100%;
+    min-height: fit-content;
+  }
+  #todo-box {
+    margin-bottom: 5rem;
+  }
+  #progress-box {
+    margin-bottom: 5rem;
+  }
+  .task {
+    padding: 1rem;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .task{
-        display: flex;
-        flex-direction: column;
-        font-size: 1.5rem;
-        padding: 2rem;
-    }
-    .task-button{
-        display: flex;
-        justify-content: space-around;
-    }
-    .task-button button{
-        width: calc(33.33% - 6.67px);
-        font-size: 1rem;
-    }
-    .task-content{
-        width: 100%;
-    }
+  .task {
+    padding: 1rem;
+  }
+  .task-button {
+    display: flex;
+    justify-content: space-around;
+  }
+  .task-button button {
+    width: calc(33.33% - 6.67px);
+    font-size: 1rem;
+  }
+  .task-content {
+    width: 100%;
+  }
 }

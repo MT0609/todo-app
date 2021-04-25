@@ -1,36 +1,47 @@
 form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 input {
-    outline: none;
-    border: none;
-    font-size: 20px;
-    padding: 10px;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
 }
 
-form input[type="text"]{
-    width: 50%;
+form input[type="text"] {
+  width: 50%;
 }
 
-form input[type="submit"]{
-    margin-top: 20px;
-    border-radius: 20px;
-    width: 40%;
-    background-color: powderblue;
-    font-size: 20px;
-    cursor: pointer;
+form input[type="text"]:focus {
+  border: 1px solid rgb(94, 91, 91);
+}
+
+form input[type="submit"] {
+  margin: 20px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: powderblue;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
 }
 
 form input[type="submit"]:hover {
-    background: linear-gradient(90deg, rgba(209,248,248,1) 0%, rgba(108,209,215,1) 51%, rgba(0,250,255,1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(209, 248, 248, 1) 0%,
+    rgba(108, 209, 215, 1) 80%,
+    rgba(0, 250, 255, 1) 100%
+  );
+  transition: all 0.4s ease-in-out;
 }
 
 @media screen and (max-width: 420px) {
-    form input[type="text"] {
-        width: 100%;
-    }
+  form input[type="text"] {
+    width: 100%;
+  }
 }

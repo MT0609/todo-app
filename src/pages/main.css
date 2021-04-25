@@ -1,14 +1,16 @@
-#task-boxes{
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;    
+#task-boxes {
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 1024px) {
-    #task-boxes {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+  #task-boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }

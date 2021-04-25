@@ -1,38 +1,55 @@
-import React, {useState, useEffect} from 'react';
-import './style/task-box.css'
+import React from "react";
+import { Grid, NativeSelect, IconButton } from "@material-ui/core";
+import { Delete } from "@material-ui/icons";
+
+import "./style/task-box.css";
 
 function ToDo(props) {
-  const {list, addNextStage, remove} = props;
+  const { list, addNextStage, remove } = props;
 
-  const addToNextStage = (item, currentStage, nextStage) => {
-    if (addNextStage) 
-      addNextStage(item, currentStage, nextStage);
-  }   
+  const handleSelect = (e, task) => {
+    if (addNextStage) addNextStage(task, "todo", e.target.value);
+  };
 
-  const removeFromTodo = (item) => {
-    if (remove)
-      remove(item, "todo");
-  }
+  const removeFromTodo = (task) => {
+    if (remove) remove(task, "todo");
+  };
 
   return (
     <div id="todo-box" className="task-box">
-      <img alt="task" src={require('../img/task.png')} />
+      <img alt="task" src={require("../img/task.png")} />
       <h1>PLAN TASKS</h1>
       <div className="task-list">
-        {
-          list.map(item => (
-            <div className="task">
-              <div className="task-content">
-                <div>{item.content}</div>
-              </div>
-              <div className="task-button">
-                <button className="progress" onClick={() => addToNextStage(item, "todo", "progress")}>PROGRESS</button>
-                <button className="complete" onClick={() => addToNextStage(item, "todo", "complete")}>COMPLETE</button>
-                <button onClick={() => removeFromTodo(item)}>DELETE</button>
-              </div>
-            </div>
-          ))
-        } 
+        {list.map((task) => (
+          <div className="task" key={task.id}>
+            <Grid container alignItems="center" justify="space-between">
+              <Grid item xs={12} sm={7} style={{ textAlign: "left" }}>
+                <p variant="h5" className="task-content">
+                  {task.content}
+                </p>
+              </Grid>
+              <Grid item xs={8} md={3}>
+                <NativeSelect
+                  fullWidth
+                  onChange={(e) => handleSelect(e, task)}
+                  inputProps={{
+                    style: { padding: "0.5rem", fontSize: "1.3rem" },
+                  }}
+                  defaultValue="todo"
+                >
+                  <option value="todo">PLANNING</option>
+                  <option value="progress">PROGRESS</option>
+                  <option value="complete">COMPLETE</option>
+                </NativeSelect>
+              </Grid>
+              <Grid item xs>
+                <IconButton onClick={() => removeFromTodo(task)}>
+                  <Delete fontSize="large" style={{ color: "black" }} />
+                </IconButton>
+              </Grid>
+            </Grid>
+          </div>
+        ))}
       </div>
     </div>
   );
