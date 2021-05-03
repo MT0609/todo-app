@@ -1,8 +1,7 @@
 form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: auto;
+  margin-bottom: 2rem;
+  width: 70%;
 }
 
 input {
@@ -10,10 +9,11 @@ input {
   border: none;
   font-size: 20px;
   padding: 10px;
+  height: 70%;
 }
 
 form input[type="text"] {
-  width: 50%;
+  width: 100%;
 }
 
 form input[type="text"]:focus {
@@ -41,7 +41,7 @@ form input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 420px) {
-  form input[type="text"] {
+  form {
     width: 100%;
   }
 }
